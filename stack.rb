@@ -1,6 +1,8 @@
 class StackOverflowError < StandardError
 end
 
+# https://www.leighhalliday.com/stack-in-ruby-linked-lists
+
 class Stack
   def initialize(max_size = nil)
     @max_size = max_size
@@ -21,13 +23,28 @@ class Stack
   # should be raised before adding the value if the stack is already at the
   # capacity.
 
+  def push(arg)
+    @list = Node.new(arg)
+    @list.size += 1
+    return self
+  end
   # Define a method "pop" which takes no arguments. This method should remove
   # and return the last value in the stack. An IndexError should be raised if
   # the Stack is empty.
 
+  def pop
+
+  end
   # Define a method "empty?" which takes no arguments. This method should return
   # whether or not the size is 0.
 
+  def empty
+
+  end
   # Define a method "peek" which takes no arguments. This method should return
   # the last value in the stack, without removing any elements in the stack.
+
+  def peek
+
+  end
 end

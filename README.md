@@ -25,3 +25,26 @@ the [Contributor Covenant](CODE_OF_CONDUCT.md) code of conduct.
 
 The code is available as open source under the terms of the
 [MIT License](http://opensource.org/licenses/MIT).
+
+
+
+rvm use 2.3.1
+
+git fetch upstream
+
+git merge upstream/master
+
+C-x C-s
+C-x C-c
+
+attestify course_01_collections/serving_03_linked_lists.rb
+
+./console
+
+
+
+git remote -v
+
+
+
+
