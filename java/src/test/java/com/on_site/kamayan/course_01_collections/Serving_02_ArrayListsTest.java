@@ -47,7 +47,6 @@ import org.junit.Test;
  *   +---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
  */
 public class Serving_02_ArrayListsTest extends TestCase {
-    @Ignore("Remove this line to run this test")
     @Test
     public void addIncreasesTheSize() {
         ArrayList list = new ArrayList();
@@ -57,7 +56,6 @@ public class Serving_02_ArrayListsTest extends TestCase {
         assertEquals(2, list.size());
     }
 
-    @Ignore("Remove this line to run this test")
     @Test
     public void addAddsToTheEnd() {
         ArrayList list = new ArrayList();
