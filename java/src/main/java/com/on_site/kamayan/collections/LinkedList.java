@@ -34,19 +34,48 @@ public class LinkedList {
     }
 
     public LinkedList prepend(Object value) {
-        throw Kamayan.todo(
-            "The prepend(Object) method should prepend the argument to the",
-            "beginning of this LinkedList and increase the size by 1. The",
-            "return value must be this."
-        );
+
+
+
+        this.head = new Node(value, head);
+
+        this.size++;
+
+        return this;
+
+        // throw Kamayan.todo(
+        //     "The prepend(Object) method should prepend the argument to the",
+        //     "beginning of this LinkedList and increase the size by 1. The",
+        //     "return value must be this."
+        // );
     }
 
     public LinkedList add(Object value) {
-        throw Kamayan.todo(
-            "The add(Object) method should append the argument to the end of",
-            "this LinkedList and increase the size by 1. The return value must",
-            "be this."
-        );
+
+        Node node = new Node(value);
+
+        // checkBounds(size);
+
+        if(this.head == null) {
+            this.head = node;
+        } else {
+            Node currentNode = head;
+
+            while (currentNode.child != null) {
+                currentNode = currentNode.child;
+            }
+
+            currentNode.child = node;
+        }
+
+
+        // throw Kamayan.todo(
+        //     "The add(Object) method should append the argument to the end of",
+        //     "this LinkedList and increase the size by 1. The return value must",
+        //     "be this."
+        // );
+        this.size++;
+        return this;
     }
 
     public Object delete(int index) {
@@ -59,35 +88,30 @@ public class LinkedList {
     }
 
     public Object get(int index) {
-        throw Kamayan.todo(
-            "The get(int) method should retrieve the value at the given index.",
-            "The index must be within the bounds of the LinkedList, or an",
-            "IndexOutOfBoundsException should be thrown."
-        );
+        checkBounds(index);
+        Node tempNode = this.head;
+
+        for(int count = 0; count < index; count++)  {
+            tempNode = tempNode.child;
+        }
+        // int count = 0;
+        // while (count < index) {
+        //     tempNode = tempNode.child;
+        //     count++;
+        // }
+        return tempNode.value;
     }
 
     public Object set(int index, Object value) {
-        throw Kamayan.todo(
-            "The set(int, Object) method should set the value at the index",
-            "defined in the first argument such that list.get(index) will",
-            "return the second argument.",
-            "",
-            "If the index is negative, an IndexOutOfBoundsException should be",
-            "thrown.",
-            "",
-            "If the index is bigger than the current size of the linked list,",
-            "the links should be adjusted to fit the new index. All indexes",
-            "between the former last element and the new index should be",
-            "initialized with null.",
-            "",
-            "The size after this method is called depends on the index",
-            "provided. An existing index would not affect the size, but an",
-            "index greater than the last index will add the difference to the",
-            "size.",
-            "",
-            "This method should return the value that was previously in the",
-            "given index, or null if that does not apply."
-        );
+        checkBounds(index);
+        Node tempNode = this.head;
+
+        for(int count = 0; count < index; count++)  {
+            tempNode = tempNode.child;
+        }
+
+        tempNode.value = value;
+        return tempNode.value;
     }
 
     private void checkBounds(int index) {

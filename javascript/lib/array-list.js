@@ -22,6 +22,7 @@ ArrayList.prototype.get = function(index) {
 // 1. The return value must be this.
 
 ArrayList.prototype.add = function(value)  {
+    this._increaseSize();
     this._array.set(this._size, value);
     this._size += 1;
     return this;
@@ -33,6 +34,7 @@ ArrayList.prototype.add = function(value)  {
 
 ArrayList.prototype.prepend = function(value)   {
 
+    this._increaseSize();
     for(var i = this._size -1; i >= 0; i -= 1)   {
         var tempValue = this._array.get(i);
         this._array.set(i + 1, tempValue);
@@ -53,9 +55,35 @@ ArrayList.prototype.prepend = function(value)   {
 
 // ArrayList.prototype.delete = function(index)    {
 //     this._checkBounds(index);
+
+//     this._array.set(1, this._array.get(2));
+//     this._size -= 1;
+
+
+//     return this;
+
 // };
 
+ArrayList.prototype.delete = function(index) {
+    this._checkBounds(index);
+    let deletedValue = this.get(index);
 
+    for(let i = index; i < this._size - 1; i += 1) {
+        this.set(i, this.get(i + 1));
+    }
+
+    this.set(this._size - 1, null);
+    this._size -= 1;
+    return deletedValue;
+};
+
+
+// test("delete returns the element at the index", function() {
+//     var list = new ArrayList().add(1).add(2).add(3);
+//     assert.equal(list.delete(0), 1);
+//     assert.equal(list.delete(1), 3);
+//     assert.equal(list.delete(0), 2);
+// });
 
 
 // Define a method "set" which takes 2 arguments. This method should set the
@@ -77,6 +105,21 @@ ArrayList.prototype.prepend = function(value)   {
 // This method should return the value that was previously in the given index,
 // or null if that does not apply.
 
+ArrayList.prototype.set = function(index, value)   {
+    this._checkLowerBound(index);
+
+    while(this._size <= index) {
+        this._size += 1;
+        this._increaseSize();
+    }
+
+    var temp = this._array.get(index)
+
+    this._array.set(index, value);
+
+    return temp;
+}
+
 ArrayList.prototype._checkBounds = function(index) {
     this._checkLowerBound(index);
     this._checkUpperBound(index);
@@ -93,5 +136,15 @@ ArrayList.prototype._checkUpperBound = function(index) {
         throw new IndexError("Invalid index: " + index);
     }
 };
+
+ArrayList.prototype._increaseSize = function()  {
+    if (this._size == this._array.size()) {
+        var temp = this._array;
+        this._array = new FixedArray(2 * this._size);
+        for(var i = 0; i < this._size; i++ )    {
+            this._array.set(i, temp.get(i));
+        }
+    }
+}
 
 module.exports = ArrayList;

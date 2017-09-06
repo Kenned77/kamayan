@@ -40,7 +40,6 @@ import org.junit.Test;
  *   +---+              +---+      +---+
  */
 public class Serving_03_LinkedListsTest extends TestCase {
-    @Ignore("Remove this line to run this test")
     @Test
     public void prependAddsToTheBeginning() {
         LinkedList list = new LinkedList();
@@ -54,7 +53,6 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertNull(Kamayan.getField(list, Object.class, "head", "child", "child"));
     }
 
-    @Ignore("Remove this line to run this test")
     @Test
     public void prependIncreasesTheSize() {
         LinkedList list = new LinkedList();
@@ -64,7 +62,6 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertEquals(2, list.size());
     }
 
-    @Ignore("Remove this line to run this test")
     @Test
     public void prependReturnsThisSoThatItIsChainable() {
         LinkedList list = new LinkedList();
@@ -74,7 +71,6 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertNull(Kamayan.getField(list, Object.class, "head", "child", "child"));
     }
 
-    @Ignore("Remove this line to run this test")
     @Test
     public void prependCanBeCalledALot() {
         LinkedList list = new LinkedList();
@@ -89,7 +85,6 @@ public class Serving_03_LinkedListsTest extends TestCase {
         });
     }
 
-    @Ignore("Remove this line to run this test")
     @Test
     public void addAddsToTheEnd() {
         LinkedList list = new LinkedList();
@@ -103,7 +98,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertNull(Kamayan.getField(list, Object.class, "head", "child", "child"));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void addIncreasesTheSize() {
         LinkedList list = new LinkedList();
@@ -113,7 +108,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertEquals(2, list.size());
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void addReturnsThisSoThatItIsChainable() {
         LinkedList list = new LinkedList();
@@ -123,7 +118,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertNull(Kamayan.getField(list, Object.class, "head", "child", "child"));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void addCanBeCalledALot() {
         LinkedList list = new LinkedList();
@@ -138,7 +133,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         });
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void addAndPrependAreChainableTogether() {
         LinkedList list = new LinkedList();
@@ -150,7 +145,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertNull(Kamayan.getField(list, Object.class, "head", "child", "child", "child", "child"));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void chainedAddAndPrependIncreasesTheSize() {
         LinkedList list = new LinkedList();
@@ -158,7 +153,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertEquals(4, list.size());
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void getCannotGoOutsideTheBoundsOfTheList() {
         LinkedList list = new LinkedList();
@@ -171,7 +166,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertThrows(IndexOutOfBoundsException.class, () -> { list.get(1); });
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void getCanRetrieveAnyElement() {
         LinkedList list = new LinkedList().add(1).add(2).add(42).add(43);
@@ -181,7 +176,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertEquals(43, list.get(3));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void setCannotUseNegativeNumber() {
         LinkedList list = new LinkedList();
@@ -190,7 +185,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         assertEquals(0, list.size());
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void setCanUseExistingIndexes() {
         LinkedList list = new LinkedList().add(0).add(1).add(2).add(3);
@@ -201,7 +196,7 @@ public class Serving_03_LinkedListsTest extends TestCase {
         Kamayan.times(4, (i) -> assertEquals(i + 1, list.get(i)));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void setWithExistingIndexesDoesntUpdateTheSize() {
         LinkedList list = new LinkedList().add(0).add(1).add(2).add(3);
