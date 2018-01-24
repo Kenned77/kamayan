@@ -34,6 +34,8 @@ git fetch upstream
 
 git merge upstream/master
 
+mvn test
+
 C-x C-s
 C-x C-c
 

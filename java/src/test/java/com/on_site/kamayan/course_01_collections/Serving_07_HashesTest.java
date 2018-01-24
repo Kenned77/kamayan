@@ -30,7 +30,7 @@ public class Serving_07_HashesTest extends TestCase {
         }
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void putReturnsThisSoItCanBeChained() throws Exception {
         Hash hash = new Hash();
@@ -38,7 +38,7 @@ public class Serving_07_HashesTest extends TestCase {
         assertEquals(hash, hash.put("xyz", 123));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void putIncreasesSize() throws Exception {
         Hash hash = new Hash();
@@ -49,7 +49,7 @@ public class Serving_07_HashesTest extends TestCase {
         assertEquals(2, hash.size());
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void putWithNullKeyThrowsAnException() throws Exception {
         Hash hash = new Hash();
@@ -57,7 +57,7 @@ public class Serving_07_HashesTest extends TestCase {
         assertEquals(0, hash.size());
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void putWithDifferentKeyButSameHashCodeIncreasesSize() throws Exception {
         Hash hash = new Hash();
@@ -67,14 +67,14 @@ public class Serving_07_HashesTest extends TestCase {
         assertEquals(2, hash.size());
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void getWithMissingKeyThrowsException() throws Exception {
         Hash hash = new Hash();
         assertThrows(MissingKeyException.class, () -> hash.get("abc"));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void getWithExistingKeyReturnsTheValueStored() throws Exception {
         Hash hash = new Hash().put("abc", 42).put("xyz", 123);
@@ -82,7 +82,7 @@ public class Serving_07_HashesTest extends TestCase {
         assertEquals(123, hash.get("xyz"));
     }
 
-    @Ignore("Remove this line to run this test")
+    // @Ignore("Remove this line to run this test")
     @Test
     public void getAfterPutReturnsNewValue() throws Exception {
         Hash hash = new Hash().put("abc", 42);
